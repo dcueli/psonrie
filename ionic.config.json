@@ -1,0 +1,7 @@
+{
+  "name": "techproof",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
