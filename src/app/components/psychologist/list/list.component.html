@@ -1,0 +1,20 @@
+<ion-list class="psychologists">
+	<ion-list-header> Available Psychologists </ion-list-header>
+  <ion-item button
+		*ngFor="let psychologist of selectedPsychologist$ | async"
+		[class.selected]="psychologist.id === selectedId"
+		lines="full"
+		mode="ios"
+		[routerLink]="['/psychologist/card/', psychologist.id]"
+	>
+		<ion-avatar slot="start">
+			<img src="{{psychologist.imageURL}}" />
+		</ion-avatar>
+		<ion-label>
+			<h2>{{psychologist.name}} {{psychologist.last_name}} ({{psychologist.rate}})</h2>
+			<p>{{psychologist.presentation}}</p>
+			<h5>Specialities</h5>
+			<p><ion-badge color="medium" *ngFor="let speciality of psychologist.specialities" class="mr-10">{{speciality.replaceAll('_', ' ')}}</ion-badge></p>
+		</ion-label>
+  </ion-item>
+</ion-list>

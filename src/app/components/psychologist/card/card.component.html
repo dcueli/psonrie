@@ -1,0 +1,25 @@
+<ion-header translucent>
+	<ion-toolbar>
+		<ion-item lines="none" mode="ios" button (click)="gotoPsychologistList()" detail="false">
+			<ion-icon name="chevron-back-outline" slot="start"></ion-icon>
+			<ion-title class="ion-text-start pl-0">Back</ion-title>
+		</ion-item>
+	</ion-toolbar> 
+</ion-header>
+
+<ion-content fullscreen>
+	<ion-card class="psychologist-card" *ngIf="psychologist$ | async as psychologist">
+		<ion-card-header class="psychologist-card-header ion-text-center">
+			<ion-card-title class="psychologist-card-title p-tb-20"><h2>{{psychologist.name}} {{psychologist.last_name}}</h2></ion-card-title>
+			<ion-img class="psychologist-card-image m-tb-20" [src]="psychologist.imageURL"></ion-img>
+			<ion-card-subtitle class="psychologist-card-subtitle"><h3>{{psychologist.rate}}</h3></ion-card-subtitle>
+		</ion-card-header>
+		<ion-card-content class="psychologist-card-content">
+			<p class="ion-text-center">
+				<ion-chip *ngFor="let speciality of psychologist.specialities" color="secondary">
+					<ion-label>{{speciality.replaceAll('_', ' ')}}</ion-label>
+				</ion-chip>
+			</p>			
+		</ion-card-content>
+	</ion-card>
+</ion-content>

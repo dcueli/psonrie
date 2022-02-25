@@ -1,0 +1,16 @@
+{
+	"login": {
+		"method": "POST",
+		"url": "https://www.psonrie.com/api/interview-test/login"
+	},
+	"psychologist": {
+		"list": {
+			"method": "GET",
+			"url": "https://www.psonrie.com/api/interview-test/psychologist"
+		},
+		"card": {
+			"method": "GET",
+			"url": "https://www.psonrie.com/api/interview-test/psychologist/{ID}"
+		}		
+	}
+}

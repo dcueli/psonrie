@@ -1,0 +1,34 @@
+<ion-header collapse="condense">
+</ion-header>
+
+<ion-content [fullscreen]="true">
+	<form [formGroup]="loginForm" (ngSubmit)="onSubmit(loginForm.value, $event)">
+
+		<ion-item mode="ios" lines="none" detail="false">
+			<ion-title size="large">Access to private Area</ion-title>
+		</ion-item>
+
+		<ion-item mode="ios" lines="none" detail="false">
+			<label for="username">User name</label>
+		</ion-item>
+		<ion-item mode="ios" lines="full" detail="false">
+			<input id="username" type="text" formControlName="username">
+		</ion-item>
+
+		<ion-item mode="ios" lines="none" detail="false">
+			<label for="password">Password</label>
+		</ion-item>
+		<ion-item mode="ios" lines="full" detail="false">
+			<input id="password" type="text" formControlName="password">
+		</ion-item>
+
+		<ion-item *ngIf="!!res.message" lines="full" detail="false">
+			<ion-label [color]="!res.ok ? 'danger' : 'success'">{{res.message}}</ion-label>
+		</ion-item>
+
+		<ion-item *ngIf="!res.ok" mode="ios" lines="full" detail="false">
+			<ion-button class="button" type="submit" [disabled]="!loginForm.valid">Log In</ion-button>
+		</ion-item>
+
+	</form>
+</ion-content>

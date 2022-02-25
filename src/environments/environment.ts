@@ -3,7 +3,16 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+	appId: 'psonrie.20220222.dcueli',
+	apiUrl: 'http://localhost',
+	dummyUserSession: {
+		key: 'loggedInUser',
+		value: {
+			username: null,
+			password: null
+		}
+	}
 };
 
 /*

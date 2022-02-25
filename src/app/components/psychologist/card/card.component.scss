@@ -1,0 +1,12 @@
+@import "../../../../assets/scss/helpers.scss";
+
+.psychologist-card{
+	.psychologist-card-header{
+		.psychologist-card-image{
+			display: inline-block;
+			overflow: hidden;
+			max-width: 25%;
+			@include border-circle();
+		}
+	}
+}
